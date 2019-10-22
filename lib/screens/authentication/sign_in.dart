@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'package:goalsfrontend/widgets/appbar/appbar.dart';
 import 'package:goalsfrontend/widgets/buttons/submit_button.dart';
 import 'package:goalsfrontend/widgets/textfields/common_textfield.dart';
@@ -8,8 +9,12 @@ class SignIn extends StatelessWidget {
   final passwordController = new TextEditingController();
   BuildContext _context;
 
-  void onSubmitPressed() {
+  void redirectToRegisterPage() {
     Navigator.pushNamed(_context, '/register');
+  }
+
+  void login(){
+    
   }
 
   @override
@@ -36,7 +41,24 @@ class SignIn extends StatelessWidget {
             new Padding(
                 padding:
                     new EdgeInsets.only(top: 25.0, left: 80.0, right: 80.0),
-                child: new SubmitButton(onSubmitPressed)),
+                child: new SubmitButton(login)),
+            new Padding(
+                padding:
+                    new EdgeInsets.only(top: 25.0, left: 80.0, right: 80.0),
+                child: new Text("OR")),
+            new Padding(
+                padding:
+                    new EdgeInsets.only(top: 25.0, left: 80.0, right: 80.0),
+                child: new GoogleSignInButton(onPressed: login, borderRadius: 18.0)),
+            new Padding(
+                padding:
+                    new EdgeInsets.only(top: 10.0, left: 40.0, right: 40.0, bottom: 100.0),
+                child: new FacebookSignInButton(onPressed: login, borderRadius: 18.0)),
+            new Padding(
+                padding: new EdgeInsets.only(bottom: 10.0),
+                child: new InkWell(
+                    child: new Text("Don't have an account? Register here!"),
+                    onTap: () => redirectToRegisterPage()))
           ],
         ))));
   }
