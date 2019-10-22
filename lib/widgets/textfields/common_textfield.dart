@@ -4,18 +4,19 @@ class CommonTextField extends StatelessWidget {
   String _placeholder;
   IconData _icon;
   bool _isObscure;
+  TextEditingController _controller;
 
-  CommonTextField(String placeholder, IconData icon, {bool isObscure = false}){
+  CommonTextField(TextEditingController controller, String placeholder, IconData icon, {bool isObscure = false}){
+    _controller = controller;
     _placeholder = placeholder;
     _icon = icon;
     _isObscure = isObscure;
   }
-  TextEditingController _textFieldController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-            controller: _textFieldController,
+            controller: _controller,
             obscureText: _isObscure,
             decoration: InputDecoration(
               contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),

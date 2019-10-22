@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goalsfrontend/utils/common/goals_colors.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
   CustomAppBar({Key key}) : super(key: key);
@@ -6,7 +7,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
   Widget build(BuildContext context) {
     return AppBar(
       title: Text("Goals"),
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: GoalsColors.MainColor,
       centerTitle: true
     );
   }
