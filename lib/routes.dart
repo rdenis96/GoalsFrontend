@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:goalsfrontend/screens/authentication/sign_in.dart';
 import 'package:goalsfrontend/screens/authentication/sign_up.dart';
+import 'package:goalsfrontend/screens/home/widgets/home.dart';
 import 'package:goalsfrontend/utils/common/goals_colors.dart';
 
 class MyApp extends StatelessWidget {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/login',
       routes: {
-        '/': (context) => SignIn(),
+        '/': (context) => Home(),
         '/login': (context) => SignIn(),
         '/register': (context) => SignUp()
       },

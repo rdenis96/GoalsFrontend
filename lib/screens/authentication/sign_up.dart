@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:goalsfrontend/widgets/appbar/appbar.dart';
+import 'package:goalsfrontend/widgets/appbar/enums/app_bar_type_enum.dart';
 import 'package:goalsfrontend/widgets/buttons/submit_button.dart';
 import 'package:goalsfrontend/widgets/textfields/common_textfield.dart';
 
 class SignUp extends StatelessWidget {
   final usernameController = new TextEditingController();
+  final emailController = new TextEditingController();
   final passwordController = new TextEditingController();
   final confirmPasswordController = new TextEditingController();
-  
+
   BuildContext _context;
 
   void onSubmitPressed() {
@@ -19,18 +21,25 @@ class SignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     _context = context;
     return new Scaffold(
-        // 1
-        appBar: CustomAppBar(),
+        appBar: CustomAppBar(AppBarType.Common),
         body: new Container(
-            // decoration: new BoxDecoration(color: Colors.white),
             child: new Center(
                 child: new Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            new Padding(
+                padding: new EdgeInsets.only(top: 60.0, bottom: 50.0),
+                child: new Text(
+                  "Sign Up",
+                  style: TextStyle(fontSize: 36.0),
+                )),
             new Padding(
                 padding: new EdgeInsets.all(8.0),
                 child: new CommonTextField(
                     usernameController, "Your Username", Icons.person_add)),
+            new Padding(
+                padding: new EdgeInsets.all(8.0),
+                child: new CommonTextField(
+                    emailController, "Your Email", Icons.email)),
             new Padding(
                 padding: new EdgeInsets.all(8.0),
                 child: new CommonTextField(passwordController, "Your Password",

@@ -1,15 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:goalsfrontend/utils/common/goals_colors.dart';
+import 'package:goalsfrontend/widgets/appbar/enums/app_bar_type_enum.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
-  CustomAppBar({Key key}) : super(key: key);
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  AppBarType _type;
+
+  CustomAppBar(AppBarType type, {Key key}) : super(key: key) {
+    _type = type;
+  }
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      title: Text("Goals"),
-      backgroundColor: GoalsColors.MainColor,
-      centerTitle: true
-    );
+    switch (_type) {
+      case AppBarType.Common:
+        return AppBar(
+            title: Text("Goals"),
+            backgroundColor: GoalsColors.MainColor,
+            centerTitle: true);
+        break;
+      case AppBarType.Home:
+        return AppBar(
+            title: Text("Life Goals"),
+            backgroundColor: GoalsColors.MainColor,
+            centerTitle: true);
+        break;
+    }
   }
 
   @override

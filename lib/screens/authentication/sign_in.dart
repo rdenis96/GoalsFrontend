@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'package:goalsfrontend/widgets/appbar/appbar.dart';
+import 'package:goalsfrontend/widgets/appbar/enums/app_bar_type_enum.dart';
 import 'package:goalsfrontend/widgets/buttons/submit_button.dart';
 import 'package:goalsfrontend/widgets/textfields/common_textfield.dart';
 
@@ -21,14 +22,14 @@ class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     _context = context;
     return new Scaffold(
-        // 1
-        appBar: CustomAppBar(),
+        appBar: CustomAppBar(AppBarType.Common),
         body: new Container(
-            // decoration: new BoxDecoration(color: Colors.white),
             child: new Center(
                 child: new Column(
           children: <Widget>[
-            new Padding(padding: new EdgeInsets.only(top: 150.0)),
+            new Padding(
+                padding: new EdgeInsets.only(top:60.0, bottom: 50.0),
+                child: new Text("Sign In", style: TextStyle(fontSize: 36.0),)),
             new Padding(
                 padding: new EdgeInsets.all(8.0),
                 child: new CommonTextField(usernameOrEmailController,
