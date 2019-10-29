@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: GoalsColors.MainColor
       ),
-      initialRoute: '/login',
+      initialRoute: '/',
       routes: {
         '/': (context) => Home(),
         '/login': (context) => SignIn(),
