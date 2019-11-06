@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:goalsfrontend/utils/common/goals_colors.dart';
+import 'package:goalsfrontend/utils/common/constants/goals_colors.dart';
 
 class SubmitButton extends StatelessWidget {
   final Function onPressed;
 
   SubmitButton(this.onPressed);
-  
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(

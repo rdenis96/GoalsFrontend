@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:goalsfrontend/utils/common/goals_colors.dart';
+import 'package:goalsfrontend/utils/common/constants/goals_colors.dart';
 import 'package:goalsfrontend/widgets/appbar/enums/app_bar_type_enum.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
