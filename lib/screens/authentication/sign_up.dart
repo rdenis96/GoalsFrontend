@@ -12,15 +12,11 @@ class SignUp extends StatelessWidget {
   final passwordController = new TextEditingController();
   final confirmPasswordController = new TextEditingController();
 
-  BuildContext _context;
-
   void onSubmitPressed() {
-    Navigator.pushNamed(_context, '/login');
   }
 
   @override
   Widget build(BuildContext context) {
-    _context = context;
     return new Scaffold(
         appBar: CustomAppBar(AppBarType.Common, AppBarTitles.register),
         body: new Container(

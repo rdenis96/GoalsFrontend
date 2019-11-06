@@ -3,25 +3,24 @@ import 'package:goalsfrontend/utils/common/goals_colors.dart';
 import 'package:goalsfrontend/widgets/appbar/enums/app_bar_type_enum.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  AppBarType _type;
-  String _pageTitle;
+  final AppBarType type;
+  final String pageTitle;
 
-  CustomAppBar(AppBarType type, String pageTitle, {Key key}) : super(key: key) {
-    _type = type;
-    _pageTitle = pageTitle;
-  }
+  CustomAppBar(this.type, this.pageTitle, {Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    switch (_type) {
+    switch (type) {
       case AppBarType.Common:
         return AppBar(
-            title: Text(_pageTitle),
+            title: Text(pageTitle),
             backgroundColor: GoalsColors.MainColor,
             centerTitle: true);
         break;
       case AppBarType.Home:
+      default:
         return AppBar(
-            title: Text(_pageTitle),
+            title: Text(pageTitle),
             backgroundColor: GoalsColors.MainColor,
             centerTitle: true);
         break;

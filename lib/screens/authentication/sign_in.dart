@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
+import 'package:goalsfrontend/utils/common/constants/routes_constants.dart';
+import 'package:goalsfrontend/utils/common/route_forward.dart';
 import 'package:goalsfrontend/widgets/appbar/appbar.dart';
 import 'package:goalsfrontend/widgets/appbar/constants/app_bar_titles.dart';
 import 'package:goalsfrontend/widgets/appbar/enums/app_bar_type_enum.dart';
@@ -9,11 +11,6 @@ import 'package:goalsfrontend/widgets/textfields/common_textfield.dart';
 class SignIn extends StatelessWidget {
   final usernameOrEmailController = new TextEditingController();
   final passwordController = new TextEditingController();
-  BuildContext _context;
-
-  void redirectToRegisterPage() {
-    Navigator.pushNamed(_context, '/register');
-  }
 
   void login(){
     
@@ -21,7 +18,6 @@ class SignIn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    _context = context;
     return new Scaffold(
         appBar: CustomAppBar(AppBarType.Common, AppBarTitles.login),
         body: new Container(
@@ -60,7 +56,7 @@ class SignIn extends StatelessWidget {
                 padding: new EdgeInsets.only(bottom: 10.0),
                 child: new InkWell(
                     child: new Text("Don't have an account? Register here!"),
-                    onTap: () => redirectToRegisterPage()))
+                    onTap: () => RouteForward.push(context, RoutesConstants.signUp)))
           ],
         ))));
   }

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:goalsfrontend/utils/common/goals_colors.dart';
 
 class SubmitButton extends StatelessWidget {
-  Function _onPressed;
-  SubmitButton(Function onPressedMethod) {
-    _onPressed = onPressedMethod;
-  }
+  final Function onPressed;
+
+  SubmitButton(this.onPressed);
+  
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -15,7 +15,7 @@ class SubmitButton extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         textColor: Colors.white,
         color: GoalsColors.MainColor,
-        onPressed: _onPressed,
+        onPressed: onPressed,
         child: new Text("Submit"),
         shape: RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(18.0),
