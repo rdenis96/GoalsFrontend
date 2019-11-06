@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:goalsfrontend/utils/common/callbacks_definitions.dart';
 import 'package:goalsfrontend/widgets/appbar/appbar.dart';
 import 'package:goalsfrontend/widgets/appbar/constants/app_bar_titles.dart';
 import 'package:goalsfrontend/widgets/appbar/enums/app_bar_type_enum.dart';
@@ -12,11 +13,14 @@ class SignUp extends StatelessWidget {
   final passwordController = new TextEditingController();
   final confirmPasswordController = new TextEditingController();
 
-  void onSubmitPressed() {
+  void submit(BuildContext context) {
+    print("Sign Up submited!");
   }
 
   @override
   Widget build(BuildContext context) {
+    OnPressedSubmit submitSignUp = submit;
+
     return new Scaffold(
         appBar: CustomAppBar(AppBarType.Common, AppBarTitles.register),
         body: new Container(
@@ -50,7 +54,7 @@ class SignUp extends StatelessWidget {
             new Padding(
                 padding:
                     new EdgeInsets.only(top: 25.0, left: 80.0, right: 80.0),
-                child: new SubmitButton(onSubmitPressed))
+                child: new SubmitButton(context, submitSignUp))
           ],
         ))));
   }

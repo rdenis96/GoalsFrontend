@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:goalsfrontend/utils/common/callbacks_definitions.dart';
 import 'package:goalsfrontend/utils/common/constants/goals_colors.dart';
 
 class SubmitButton extends StatelessWidget {
-  final Function onPressed;
+  final OnPressedSubmit onPressed;
+  final BuildContext context;
+  SubmitButton(this.context, this.onPressed);
 
-  SubmitButton(this.onPressed);
+  void callOnPressed(){
+    onPressed(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +20,7 @@ class SubmitButton extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         textColor: Colors.white,
         color: GoalsColors.MainColor,
-        onPressed: onPressed,
+        onPressed: callOnPressed,
         child: new Text("Submit"),
         shape: RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(18.0),
