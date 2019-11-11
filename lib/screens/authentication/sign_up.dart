@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:goalsfrontend/utils/common/callbacks_definitions.dart';
+import 'package:goalsfrontend/utils/common/helpers/device_context_size.dart';
 import 'package:goalsfrontend/widgets/appbar/appbar.dart';
 import 'package:goalsfrontend/widgets/appbar/constants/app_bar_titles.dart';
 import 'package:goalsfrontend/widgets/appbar/enums/app_bar_type_enum.dart';
@@ -28,32 +29,46 @@ class SignUp extends StatelessWidget {
                 child: new Column(
           children: <Widget>[
             new Padding(
-                padding: new EdgeInsets.only(top: 60.0, bottom: 50.0),
+                padding: new EdgeInsets.only(top: DeviceContextSize.heightFromPercentage(context, 5), bottom: DeviceContextSize.heightFromPercentage(context, 5)),
                 child: new Text(
                   "Sign Up",
-                  style: TextStyle(fontSize: 36.0),
+                  style: TextStyle(fontSize: DeviceContextSize.heightFromPercentage(context, 4)),
                 )),
             new Padding(
-                padding: new EdgeInsets.all(8.0),
+                padding: new EdgeInsets.only(
+                    top: DeviceContextSize.heightFromPercentage(context, 2),
+                    left: DeviceContextSize.widthFromPercentage(context, 6),
+                    right: DeviceContextSize.widthFromPercentage(context, 6)),
                 child: new CommonTextField(
                     usernameController, "Your Username", Icons.person_add)),
             new Padding(
-                padding: new EdgeInsets.all(8.0),
+                padding: new EdgeInsets.only(
+                    top: DeviceContextSize.heightFromPercentage(context, 2),
+                    left: DeviceContextSize.widthFromPercentage(context, 6),
+                    right: DeviceContextSize.widthFromPercentage(context, 6)),
                 child: new CommonTextField(
                     emailController, "Your Email", Icons.email)),
             new Padding(
-                padding: new EdgeInsets.all(8.0),
+                padding: new EdgeInsets.only(
+                    top: DeviceContextSize.heightFromPercentage(context, 2),
+                    left: DeviceContextSize.widthFromPercentage(context, 6),
+                    right: DeviceContextSize.widthFromPercentage(context, 6)),
                 child: new CommonTextField(passwordController, "Your Password",
                     Icons.enhanced_encryption,
                     isObscure: true)),
             new Padding(
-                padding: new EdgeInsets.all(8.0),
+                padding: new EdgeInsets.only(
+                    top: DeviceContextSize.heightFromPercentage(context, 2),
+                    left: DeviceContextSize.widthFromPercentage(context, 6),
+                    right: DeviceContextSize.widthFromPercentage(context, 6)),
                 child: new CommonTextField(confirmPasswordController,
                     "Confirm Password", Icons.enhanced_encryption,
                     isObscure: true)),
             new Padding(
-                padding:
-                    new EdgeInsets.only(top: 25.0, left: 80.0, right: 80.0),
+                padding: new EdgeInsets.only(
+                    top: DeviceContextSize.heightFromPercentage(context, 3),
+                    left: DeviceContextSize.widthFromPercentage(context, 25),
+                    right: DeviceContextSize.widthFromPercentage(context, 25)),
                 child: new SubmitButton(context, submitSignUp))
           ],
         ))));

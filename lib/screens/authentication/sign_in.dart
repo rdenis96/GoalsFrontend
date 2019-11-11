@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'package:goalsfrontend/utils/common/callbacks_definitions.dart';
 import 'package:goalsfrontend/utils/common/constants/routes_constants.dart';
+import 'package:goalsfrontend/utils/common/helpers/device_context_size.dart';
 import 'package:goalsfrontend/utils/common/route_forward.dart';
 import 'package:goalsfrontend/widgets/appbar/appbar.dart';
 import 'package:goalsfrontend/widgets/appbar/constants/app_bar_titles.dart';
@@ -29,40 +30,40 @@ class SignIn extends StatelessWidget {
                 child: new Column(
           children: <Widget>[
             new Padding(
-                padding: new EdgeInsets.only(top: 60.0, bottom: 50.0),
+                padding: new EdgeInsets.only(top: DeviceContextSize.heightFromPercentage(context, 5), bottom: DeviceContextSize.heightFromPercentage(context, 5)),
                 child: new Text(
                   "Sign In",
-                  style: TextStyle(fontSize: 36.0),
+                  style: TextStyle(fontSize: DeviceContextSize.heightFromPercentage(context, 4)),
                 )),
             new Padding(
-                padding: new EdgeInsets.all(8.0),
+                padding: new EdgeInsets.only(top: DeviceContextSize.heightFromPercentage(context, 2), left: DeviceContextSize.widthFromPercentage(context, 6), right: DeviceContextSize.widthFromPercentage(context, 6)),
                 child: new CommonTextField(usernameOrEmailController,
                     "Username/Email here", Icons.person_add)),
             new Padding(
-                padding: new EdgeInsets.all(8.0),
+                padding: new EdgeInsets.only(top: DeviceContextSize.heightFromPercentage(context, 2), left: DeviceContextSize.widthFromPercentage(context, 6), right: DeviceContextSize.widthFromPercentage(context, 6)),
                 child: new CommonTextField(passwordController, "Password Here",
                     Icons.enhanced_encryption,
                     isObscure: true)),
             new Padding(
                 padding:
-                    new EdgeInsets.only(top: 25.0, left: 80.0, right: 80.0),
+                    new EdgeInsets.only(top: DeviceContextSize.heightFromPercentage(context, 3), left: DeviceContextSize.widthFromPercentage(context, 25), right: DeviceContextSize.widthFromPercentage(context, 25)),
                 child: new SubmitButton(context, submitSignIn)),
             new Padding(
                 padding:
-                    new EdgeInsets.only(top: 25.0, left: 80.0, right: 80.0),
+                    new EdgeInsets.only(top: DeviceContextSize.heightFromPercentage(context, 3), left: DeviceContextSize.widthFromPercentage(context, 25), right: DeviceContextSize.widthFromPercentage(context, 25)),
                 child: new Text("OR")),
             new Padding(
                 padding:
-                    new EdgeInsets.only(top: 25.0, left: 80.0, right: 80.0),
+                    new EdgeInsets.only(top: DeviceContextSize.heightFromPercentage(context, 3), left: DeviceContextSize.widthFromPercentage(context, 20), right: DeviceContextSize.widthFromPercentage(context, 20)),
                 child: new GoogleSignInButton(
                     onPressed: () {}, borderRadius: 18.0)),
             new Padding(
                 padding: new EdgeInsets.only(
-                    top: 10.0, left: 40.0, right: 40.0, bottom: 100.0),
+                    top: DeviceContextSize.heightFromPercentage(context, 1), left: DeviceContextSize.widthFromPercentage(context, 15), right: DeviceContextSize.widthFromPercentage(context, 15), bottom: DeviceContextSize.heightFromPercentage(context, 15)),
                 child: new FacebookSignInButton(
                     onPressed: () {}, borderRadius: 18.0)),
             new Padding(
-                padding: new EdgeInsets.only(bottom: 10.0),
+                padding: new EdgeInsets.only(bottom: DeviceContextSize.heightFromPercentage(context, 1)),
                 child: new InkWell(
                     child: new Text("Don't have an account? Register here!"),
                     onTap: () =>
