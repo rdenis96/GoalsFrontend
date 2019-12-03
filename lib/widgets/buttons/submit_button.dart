@@ -23,11 +23,11 @@ class SubmitButton extends StatelessWidget {
                 left: DeviceContextSize.widthFromPercentage(context, 10),
                 right: DeviceContextSize.widthFromPercentage(context, 10)),
             textColor: Colors.white,
-            color: GoalsColors.MainColor,
+            color: GoalsColors.materialMainColor,
             onPressed: callOnPressed,
             child: new Text("Submit"),
             shape: RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(18.0),
-                side: BorderSide(color: GoalsColors.MainColor))));
+                side: BorderSide(color: GoalsColors.materialMainColor))));
   }
 }

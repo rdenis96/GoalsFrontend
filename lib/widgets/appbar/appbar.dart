@@ -14,14 +14,20 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       case AppBarType.Common:
         return AppBar(
             title: Text(pageTitle),
-            backgroundColor: GoalsColors.MainColor,
+            backgroundColor: GoalsColors.materialMainColor,
             centerTitle: true);
         break;
       case AppBarType.Home:
       default:
         return AppBar(
             title: Text(pageTitle),
-            backgroundColor: GoalsColors.MainColor,
+            backgroundColor: GoalsColors.materialMainColor,
+            leading: IconButton(
+              icon: Icon(Icons.add_circle),
+              onPressed: () {
+                //to implement action
+              },
+            ),
             centerTitle: true);
         break;
     }

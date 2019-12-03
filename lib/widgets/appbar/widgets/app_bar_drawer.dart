@@ -8,8 +8,7 @@ class AppBarNavigationDrawer extends StatefulWidget {
 }
 
 class _AppBarNavigationDrawerState extends State<AppBarNavigationDrawer> {
-
-  void forwardSignInPage(){
+  void forwardSignInPage() {
     RouteForward.popAndPush(context, RoutesConstants.signIn);
   }
 
@@ -27,14 +26,23 @@ class _AppBarNavigationDrawerState extends State<AppBarNavigationDrawer> {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.home),
-            title: Text("Home"),
-            onTap: () {},
-          ),
-          Divider(color: Colors.black, height: .6),
-          ListTile(
             leading: Icon(Icons.dashboard),
             title: Text("Categories"),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(Icons.history),
+            title: Text("Activity"),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(Icons.favorite),
+            title: Text("Favorites"),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(Icons.settings),
+            title: Text("Settings"),
             onTap: () {},
           ),
           Divider(color: Colors.black, height: .6),
