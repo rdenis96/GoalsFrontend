@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:goalsfrontend/utils/common/callbacks_definitions.dart';
 import 'package:goalsfrontend/utils/common/constants/goals_colors.dart';
-import 'package:goalsfrontend/utils/common/helpers/device_context_size.dart';
+import 'package:goalsfrontend/utils/common/helpers/build_context_extensions.dart';
 
 class SubmitButton extends StatelessWidget {
   final OnPressedSubmit onPressed;
@@ -15,13 +15,13 @@ class SubmitButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: DeviceContextSize.heightFromPercentage(context, 5),
+        height: context.heightFromPercentage(5),
         width: double.infinity,
         child: new RaisedButton(
             padding: new EdgeInsets.only(
-                top: DeviceContextSize.heightFromPercentage(context, 0),
-                left: DeviceContextSize.widthFromPercentage(context, 10),
-                right: DeviceContextSize.widthFromPercentage(context, 10)),
+                top: context.heightFromPercentage(0),
+                left: context.widthFromPercentage(10),
+                right: context.widthFromPercentage(10)),
             textColor: Colors.white,
             color: GoalsColors.materialMainColor,
             onPressed: callOnPressed,
