@@ -1,6 +1,8 @@
 class Post{
   int id;
-  String imageUrl;
+  String contentUrl;
+  String contentDescription;
+  String userName;
   String userAvatarUrl;
   String userLocation;
 }
