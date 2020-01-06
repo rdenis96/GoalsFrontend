@@ -13,6 +13,10 @@ class HomePost extends StatefulWidget {
 }
 
 class _HomePostState extends State<HomePost> {
+  void onFavoritePressed() {
+    widget.post.isLiked = !widget.post.isLiked;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
@@ -45,7 +49,6 @@ class _HomePostState extends State<HomePost> {
       Row(
         children: <Widget>[
           Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Row(
                 children: <Widget>[
@@ -55,21 +58,41 @@ class _HomePostState extends State<HomePost> {
                       height: context.heightFromPercentage(30))
                 ],
               ),
-              Row(
-                children: <Widget>[
-                  Padding(
-                    padding: new EdgeInsets.only(
-                        top: context.heightFromPercentage(1),
-                        left: context.widthFromPercentage(4)),
-                    child: Text("5 comments",
-                        style: TextStyle(fontStyle: FontStyle.italic)),
-                  ),
-                ],
-              )
             ],
           )
         ],
       ),
+      Row(
+        children: <Widget>[
+          Padding(
+            padding: new EdgeInsets.only(
+                top: context.heightFromPercentage(1),
+                left: context.widthFromPercentage(4)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text("20 likes", style: TextStyle(fontStyle: FontStyle.normal)),
+                Text("5 comments",
+                    style: TextStyle(fontStyle: FontStyle.italic)),
+              ],
+            ),
+          ),
+          Spacer(),
+          GestureDetector(
+            child: widget.post.isLiked == false
+                ? Icon(Icons.favorite_border, color: Colors.black)
+                : Icon(Icons.favorite, color: Colors.red),
+            onTap: () => setState(() => onFavoritePressed()),
+            
+          ),
+          Padding(
+              padding: EdgeInsets.only(right: context.widthFromPercentage(4)),
+              child: GestureDetector(
+                child: Icon(Icons.share, color: Colors.black),
+                onTap: () {},
+              ))
+        ],
+      )
     ]);
   }
 }

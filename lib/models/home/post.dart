@@ -5,4 +5,5 @@ class Post{
   String userName;
   String userAvatarUrl;
   String userLocation;
+  bool isLiked = false;
 }
