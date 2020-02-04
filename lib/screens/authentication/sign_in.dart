@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'package:goalsfrontend/utils/common/callbacks_definitions.dart';
 import 'package:goalsfrontend/utils/common/constants/routes_constants.dart';
-import 'package:goalsfrontend/utils/common/helpers/build_context_extensions.dart';
+import 'package:goalsfrontend/utils/common/extensions/build_context_extensions.dart';
 import 'package:goalsfrontend/utils/common/route_forward.dart';
 import 'package:goalsfrontend/widgets/appbar/appbar.dart';
 import 'package:goalsfrontend/widgets/appbar/constants/app_bar_titles.dart';

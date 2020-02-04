@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:goalsfrontend/utils/common/callbacks_definitions.dart';
 import 'package:goalsfrontend/utils/common/constants/goals_colors.dart';
-import 'package:goalsfrontend/utils/common/helpers/build_context_extensions.dart';
+import 'package:goalsfrontend/utils/common/extensions/build_context_extensions.dart';
 
 class SubmitButton extends StatelessWidget {
   final OnPressedSubmit onPressed;
