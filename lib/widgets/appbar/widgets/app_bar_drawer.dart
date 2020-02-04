@@ -12,6 +12,10 @@ class _AppBarNavigationDrawerState extends State<AppBarNavigationDrawer> {
     RouteForward.popAndPush(context, RoutesConstants.signIn);
   }
 
+  void forwardSettingsPage(){
+    RouteForward.popAndPush(context, RoutesConstants.settings);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -19,10 +23,10 @@ class _AppBarNavigationDrawerState extends State<AppBarNavigationDrawer> {
         padding: EdgeInsets.all(0),
         children: [
           UserAccountsDrawerHeader(
-            accountEmail: Text("Akram.aic193@Gmail.com"),
-            accountName: Text("Akram Chauhan"),
+            accountEmail: Text("rdenis9616@gmail.com"),
+            accountName: Text("Denis Radu"),
             currentAccountPicture: CircleAvatar(
-              child: Text("AC"),
+              backgroundImage: NetworkImage("https://img.favpng.com/12/15/8/ninja-computer-programming-learning-study-skills-png-favpng-5AG41F2Kzg1ZR8Fi1JBrfmrtV.jpg"),
             ),
           ),
           ListTile(
@@ -43,7 +47,7 @@ class _AppBarNavigationDrawerState extends State<AppBarNavigationDrawer> {
           ListTile(
             leading: Icon(Icons.settings),
             title: Text("Settings"),
-            onTap: () {},
+            onTap: forwardSettingsPage,
           ),
           Divider(color: Colors.black, height: .6),
           ListTile(

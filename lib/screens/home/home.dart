@@ -13,7 +13,7 @@ class Home extends StatelessWidget {
     Post post = new Post();
     post.id = 1;
     post.contentUrl = "https://miro.medium.com/max/12000/1*ih1LLB8UY6QnB5tpcQQPkA.jpeg";
-    post.userName = "Denis Ninja";
+    post.userName = "Denis Radu";
     post.userAvatarUrl = "https://img.favpng.com/12/15/8/ninja-computer-programming-learning-study-skills-png-favpng-5AG41F2Kzg1ZR8Fi1JBrfmrtV.jpg";
     post.userLocation = "Romania, Bucharest";
     homePosts.add(post);
